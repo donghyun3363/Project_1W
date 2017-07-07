@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/saveLink"
+        android:title="링크 저장"
+        android:icon="@drawable/ic_messenger"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/hideContent"
+        android:title="게시물 숨기기"
+        android:icon="@drawable/ic_messenger"
+        app:showAsAction="ifRoom|withText"
+        />
+    <item
+        android:id="@+id/cancelFollow"
+        android:title="팔로우 취소"
+        android:icon="@drawable/ic_messenger"
+        app:showAsAction="ifRoom|withText"
+        />
+    <item
+        android:id="@+id/contet119"
+        android:title="이 게시물 신고하기"
+        android:icon="@drawable/ic_messenger"
+        app:showAsAction="ifRoom|withText"
+        />
+    <item
+        android:id="@+id/alarm"
+        android:title="이 게시물에 대한 알림 설정"
+        android:icon="@drawable/ic_messenger"
+        app:showAsAction="ifRoom|withText"
+        />
+</menu>

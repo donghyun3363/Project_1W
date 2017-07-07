@@ -2,22 +2,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bar"
     android:layout_width="match_parent"
-    android:layout_height="30dp" >
+    android:layout_height="wrap_content" >
     <LinearLayout
         android:layout_width="match_parent"
         android:background="#ffffff"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/mn0"
             android:src="@drawable/ic_timeline"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:scaleType="fitXY"
             android:background="@android:color/transparent"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginRight="60dp"
             android:onClick="Cl_timeline"
             />
@@ -25,8 +25,8 @@
         <ImageButton
             android:id="@+id/mn1"
             android:src="@drawable/ic_friends"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:scaleType="fitXY"
             android:background="@android:color/transparent"
             android:layout_marginRight="60dp"
@@ -37,8 +37,8 @@
         <ImageButton
             android:id="@+id/mn2"
             android:src="@drawable/ic_globe"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:scaleType="fitXY"
             android:background="@android:color/transparent"
             android:layout_marginRight="60dp"
@@ -48,8 +48,8 @@
         <ImageButton
             android:id="@+id/mn3"
             android:src="@drawable/ic_history"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:scaleType="fitXY"
             android:background="@android:color/transparent"
             android:layout_marginRight="20dp"

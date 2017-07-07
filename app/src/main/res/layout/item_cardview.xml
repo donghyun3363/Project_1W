@@ -3,7 +3,8 @@
     android:id="@+id/cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+    android:layout_margin="0dp"
+>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,62 +18,68 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
+                android:layout_width="wrap_content"
+                android:layout_height="57dp"
                 android:background="#fff"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/image_title"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/ic_content0" />
+                    android:background="@android:color/transparent" />
 
                 <RelativeLayout
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/imageView"
-                    android:layout_toRightOf="@+id/imageView"
+                    android:layout_toEndOf="@+id/image_title"
+                    android:layout_toRightOf="@+id/image_title"
                     android:orientation="vertical">
 
                     <TextView
+                        android:layout_marginTop="13dp"
                         android:id="@+id/ct_title"
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="인사이트"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textSize="16dp" />
+                        android:textSize="14dp"
+                        />
 
                     <TextView
                         android:id="@+id/ct_ifo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
                         android:layout_below="@id/ct_title"
                         android:scaleType="centerInside"
-                        android:text="1시간·"
-                        android:textSize="14dp" />
+                        android:textStyle="bold"
+                        android:textSize="12dp" />
 
                     <ImageView
                         android:layout_width="20dp"
-                        android:layout_height="21dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignRight="@+id/ct_title"
-                        android:layout_toRightOf="@id/ct_ifo"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/ct_title"
+                        android:layout_toEndOf="@+id/ct_ifo"
+                        android:layout_toRightOf="@+id/ct_ifo"
                         android:scaleType="fitXY"
                         android:src="@drawable/ic_globe_mini" />
 
-                    <ImageView
+                    <ImageButton
+                        android:id="@+id/ct_expand"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
                         android:background="@android:color/transparent"
                         android:scaleType="fitXY"
+                        android:onClick="onPopupClick"
                         android:src="@drawable/ic_expand" />
                 </RelativeLayout>
             </RelativeLayout>
@@ -94,7 +101,7 @@
                     android:id="@+id/ct_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Text" />
+                    android:textStyle="bold" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -118,8 +125,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/img_content" />
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -140,27 +146,37 @@
                     android:layout_width='wrap_content'
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/img_status" />
+                    android:src="@drawable/ic_status" />
 
                 <TextView
+                    android:id="@+id/like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ct_status"
-                    android:text="1,729개" />
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/share"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="댓글 67개  공유 11회" />
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/commend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/share"
+                    android:textStyle="bold"
+
+                    />
             </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:background="#ddd">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -179,7 +195,8 @@
                     android:drawableLeft="@drawable/ic_favorite"
                     android:gravity="center"
                     android:onClick="CI_like"
-                    android:text="좋아요" />
+                    android:text="좋아요"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/ct_commed"
@@ -190,7 +207,8 @@
                     android:drawableLeft="@drawable/ic_comment"
                     android:gravity="center"
                     android:onClick="CI_comment"
-                    android:text="댓글 달기" />
+                    android:text="댓글 달기"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/ct_share"
@@ -201,8 +219,15 @@
                     android:drawableLeft="@drawable/ic_share"
                     android:gravity="center"
                     android:onClick="CI_share"
-                    android:text="공유 하기" />
+                    android:text="공유 하기"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="#e6e6e6"></View>>
     </LinearLayout>
+
 </android.support.v7.widget.CardView>

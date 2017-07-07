@@ -17,29 +17,25 @@ import com.example.donghyunlee.project_1w.Myfragment.ThirdFragment;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager vp;
-    final int ITEM_SIZE = 5;
-    private static final String TAG = "Log_Tag";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         vp = (ViewPager) findViewById(R.id.vp);
         ImageButton btn_first = (ImageButton) findViewById(R.id.mn0);
         ImageButton btn_second = (ImageButton) findViewById(R.id.mn1);
         ImageButton btn_third = (ImageButton) findViewById(R.id.mn2);
         ImageButton btn_fourth = (ImageButton) findViewById(R.id.mn3);
-        vp.setAdapter(new pagerAdapter(getSupportFragmentManager()));
+        vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         vp.setCurrentItem(0); //    첫번째 페이지 초기화
-        btn_first.setOnClickListener(movePageListener);
         btn_first.setTag(0);
-        btn_second.setOnClickListener(movePageListener);
         btn_second.setTag(1);
-        btn_third.setOnClickListener(movePageListener);
         btn_third.setTag(2);
-        btn_fourth.setOnClickListener(movePageListener);
         btn_fourth.setTag(3);
+        btn_first.setOnClickListener(movePageListener);
+        btn_second.setOnClickListener(movePageListener);
+        btn_third.setOnClickListener(movePageListener);
+        btn_fourth.setOnClickListener(movePageListener);
     }
             View.OnClickListener movePageListener = new View.OnClickListener() {
         @Override
@@ -48,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
             vp.setCurrentItem(tag);
         }
     };
-    class pagerAdapter extends FragmentStatePagerAdapter {
-
-        public pagerAdapter(FragmentManager fm) {
+    class MyPagerAdapter extends FragmentStatePagerAdapter {
+        public MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
         @Override
@@ -75,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             return 4;
         }
     }
-
     public void Cl_camera(View v)
     {
         Toast.makeText(this, "카메라", Toast.LENGTH_SHORT).show();
