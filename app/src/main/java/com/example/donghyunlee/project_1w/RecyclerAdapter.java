@@ -19,16 +19,24 @@ import android.widget.Toast;
 
 import java.util.List;
 
+/**
+ * Created by DONGHYUNLEE on 2017-07-05.
+ * 리사이클러뷰 어댑터 클래스(뷰홀더, 뷰홀더크레이트(뷰홀더, 뷰홀더를 저장), 뷰홀더바인드(리스트뷰의 getView와 동일))
+ */
+
+
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     Context context;
     List<Item> items;
     int item_layout;
     String tag = null;
+
     public RecyclerAdapter(Context context, List<Item> items, int item_layout) {
         this.context = context;
         this.items = items;
         this.item_layout = item_layout;
     }
+    // 뷰홀더
     public class ViewHolder extends RecyclerView.ViewHolder {
         CardView cardview;
         ImageView image;
@@ -44,6 +52,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         Button btn_commend;
         Button btn_share;
 
+        // 뷰홀더에서 각 뷰들을 참조 함수
         public ViewHolder(View itemView) {
             super(itemView);
             cardview = (CardView) itemView.findViewById(R.id.cardview);
@@ -61,11 +70,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             btn_share = (Button) itemView.findViewById(R.id.ct_share);
         }
     }
+    // 뷰홀더 생성(인플레터 후)
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview, null);
         return new ViewHolder(v);
     }
+    // getView
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Item item = items.get(position);
@@ -136,6 +147,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             }
         });
     }
+    // 아이템 수 카운트
     @Override
     public int getItemCount() {
         return this.items.size();

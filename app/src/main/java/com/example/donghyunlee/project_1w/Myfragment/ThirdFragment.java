@@ -11,6 +11,7 @@ import com.example.donghyunlee.project_1w.R;
 
 /**
  * Created by DONGHYUNLEE on 2017-07-04.
+ * 뷰플리퍼, 세번째 프래그먼트
  */
 
 public class ThirdFragment extends Fragment{

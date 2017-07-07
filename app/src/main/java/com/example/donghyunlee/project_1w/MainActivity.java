@@ -15,19 +15,28 @@ import com.example.donghyunlee.project_1w.Myfragment.FourthFragment;
 import com.example.donghyunlee.project_1w.Myfragment.SecondFragment;
 import com.example.donghyunlee.project_1w.Myfragment.ThirdFragment;
 
+/**
+ * Created by DONGHYUNLEE
+ * 메인액티비티
+ */
+
 public class MainActivity extends AppCompatActivity {
     ViewPager vp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        // 뷰페이저 setting
         vp = (ViewPager) findViewById(R.id.vp);
+        vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        vp.setCurrentItem(0);       // 첫번째 페이지 초기화
+
         ImageButton btn_first = (ImageButton) findViewById(R.id.mn0);
         ImageButton btn_second = (ImageButton) findViewById(R.id.mn1);
         ImageButton btn_third = (ImageButton) findViewById(R.id.mn2);
         ImageButton btn_fourth = (ImageButton) findViewById(R.id.mn3);
-        vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-        vp.setCurrentItem(0); //    첫번째 페이지 초기화
         btn_first.setTag(0);
         btn_second.setTag(1);
         btn_third.setTag(2);
@@ -37,13 +46,14 @@ public class MainActivity extends AppCompatActivity {
         btn_third.setOnClickListener(movePageListener);
         btn_fourth.setOnClickListener(movePageListener);
     }
-            View.OnClickListener movePageListener = new View.OnClickListener() {
+    View.OnClickListener movePageListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int tag = (int) v.getTag();
             vp.setCurrentItem(tag);
         }
     };
+    // 뷰페이저 Adapter 클래스
     class MyPagerAdapter extends FragmentStatePagerAdapter {
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -70,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
             return 4;
         }
     }
+
+    // xml onClick
     public void Cl_camera(View v)
     {
         Toast.makeText(this, "카메라", Toast.LENGTH_SHORT).show();

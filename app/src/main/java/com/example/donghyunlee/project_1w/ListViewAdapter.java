@@ -16,6 +16,7 @@ import static com.example.donghyunlee.project_1w.R.layout.friend_listview_item;
 
 /**
  * Created by DONGHYUNLEE on 2017-07-07.
+ * 리스트 뷰 어댑터 클래스, 리스트 데이터 item을 액티비티에 뿌려주는 것
  */
 public class ListViewAdapter extends BaseAdapter{
 
@@ -49,17 +50,17 @@ public class ListViewAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if(convertView == null){
+        if(convertView == null){    // 인프레터
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(friend_listview_item, parent, false);
         }
 
         Context context = parent.getContext();
         ListViewItem item = items.get(position);
+
+        // 아이템 Setting
         ImageView imageview = (ImageView) convertView.findViewById(R.id.friend_imageview);
         TextView textView = (TextView) convertView.findViewById(R.id.friend_textview);
-
-
         Drawable drawable = ContextCompat.getDrawable(context, item.getProfilDrawable());
         imageview.setImageDrawable(drawable);
         textView.setText(item.getTitleStr());

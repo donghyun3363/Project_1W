@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 /**
  * Created by DONGHYUNLEE on 2017-07-04.
+ * 뷰플리퍼, 두번째 프래그먼트
  */
 
 public class SecondFragment extends Fragment{
@@ -31,18 +32,20 @@ public class SecondFragment extends Fragment{
 
         View v =inflater.inflate(R.layout.fragment_second, container, false);
 
-
+        // 리스트뷰 아이템 셋팅
         ArrayList<ListViewItem> items = new ArrayList<>();
         ListViewItem[] item = new ListViewItem[4];
 
-        item[0] = new ListViewItem(R.drawable.img_profil1, "dd", "dd");
-        item[1] = new ListViewItem(R.drawable.img_profil2, "33", "33");
-        item[2] = new ListViewItem(R.drawable.img_profil3, "55", "33");
-        item[3] = new ListViewItem(R.drawable.img_profil4, "44", "33");
+        item[0] = new ListViewItem(R.drawable.img_profil1, "신우용님이 회원님의 친구 요청을 수락했습니다. ", "6월 7일");
+        item[1] = new ListViewItem(R.drawable.img_profil2, "신우용님이 회원님의 친구 요청을 수락했습니다. ", "6월 7일");
+        item[2] = new ListViewItem(R.drawable.img_profil3, "신우용님이 회원님의 친구 요청을 수락했습니다. ", "6월 7일");
+        item[3] = new ListViewItem(R.drawable.img_profil4, "신우용님이 회원님의 친구 요청을 수락했습니다. ", "6월 7일");
 
+        // ArayList에 추가
         for (int i = 0; i < 4; i++) {
             items.add(item[i]);
         }
+        // 리스트뷰 생성
         ListView listview = (ListView) v.findViewById(R.id.friend_listview);
         listview.setAdapter(new ListViewAdapter(getActivity(), items, R.layout.friend_listview_item));
         return v;

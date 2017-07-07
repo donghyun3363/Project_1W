@@ -2,6 +2,7 @@ package com.example.donghyunlee.project_1w;
 
 /**
  * Created by DONGHYUNLEE on 2017-07-07.
+ * 리스트뷰 아이템 클래스
  */
 
 public class ListViewItem {
