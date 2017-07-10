@@ -4,8 +4,25 @@ android:orientation="vertical"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
 
-<ListView
-    android:id="@+id/friend_listview"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/textscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/facebookbook_friendbar"
+                android:id="@+id/top_bar" />
+
+            <ListView
+                android:layout_below="@id/top_bar"
+                android:id="@+id/friend_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>>
+
+
 </RelativeLayout>

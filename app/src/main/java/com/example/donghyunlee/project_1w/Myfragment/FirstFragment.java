@@ -23,6 +23,7 @@ import java.util.List;
 
 public class FirstFragment extends Fragment{
 
+
     final int ITEM_SIZE = 4;
     private static final String TAG = "Log_Tag";
     public FirstFragment(){
@@ -33,13 +34,15 @@ public class FirstFragment extends Fragment{
         // fragment_first xml 인플레터 후 뷰가져오기
         View v = inflater.inflate(R.layout.fragment_first, container, false);
 
+
         // item 셋팅
         List<Item> items = new ArrayList<>();
         Item[] item = new Item[ITEM_SIZE];
-        item[0] = new Item(R.drawable.img_title, R.drawable.img_content, "1시간", "1,792개", "댓글 67개", "공유 11회", "인사이트", "메시 부부는 결혼식을 검소하게 치르기 위해 많은 노력을 기울였다.");
-        item[1] = new Item(R.drawable.img_title, R.drawable.img_content3, "13분", "2,132개", "댓글 926개", "공유 43회", "인사이트", "만쉐~!!");
-        item[2] = new Item(R.drawable.img_title2, R.drawable.img_content2, "어제 오후 1:00", "62개", "댓글 32개", "공유 4회", "닥치고취업님이 새로운 사진 7장을 추가했습니다.", "유행어제조기 원썬.jpg \n 렛미두잇어게인~ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
-        item[3] = new Item(R.drawable.img_title3, R.drawable.img_content4, "어제 오후 9:40", "72개", "댓글 23개", "공유 13회", "독취사 - 독하게취업하는사람들님이 새로운 사진 15장을 추가했습니다.", "평화로운 중고나라 모음 ㅎ^ㅎ\n #직거래살인마\n #배꼽주의");
+        item[0] = new Item(R.drawable.img_title, R.drawable.img_content, "1시간", "1,792개", "댓글 67개", "공유 11회", getContext().getString(R.string.title00), getContext().getString(R.string.content00));
+        item[1] = new Item(R.drawable.img_title, R.drawable.img_content3, "13분", "2,132개", "댓글 926개", "공유 43회", getContext().getString(R.string.title01), getContext().getString(R.string.content01));
+        item[2] = new Item(R.drawable.img_title2, R.drawable.img_content2, "어제 오후 1:00", "62개", "댓글 32개", "공유 4회", getContext().getString(R.string.title02), getContext().getString(R.string.content02));
+        item[3] = new Item(R.drawable.img_title3, R.drawable.img_content4, "어제 오후 9:40", "72개", "댓글 23개", "공유 13회", getContext().getString(R.string.title03), getContext().getString(R.string.content03));
+
 
         // ArayList에 추가
         for (int i = 0; i < 4; i++) {

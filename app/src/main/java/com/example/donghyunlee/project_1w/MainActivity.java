@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -22,12 +23,15 @@ import com.example.donghyunlee.project_1w.Myfragment.ThirdFragment;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager vp;
+    private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
         // 뷰페이저 setting
         vp = (ViewPager) findViewById(R.id.vp);
         vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
