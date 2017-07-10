@@ -1,4 +1,4 @@
-package com.example.donghyunlee.project_1w.Myfragment;
+package com.example.donghyunlee.project_1w.myfragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

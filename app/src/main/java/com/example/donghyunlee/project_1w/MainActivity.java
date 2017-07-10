@@ -11,10 +11,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.donghyunlee.project_1w.Myfragment.FirstFragment;
-import com.example.donghyunlee.project_1w.Myfragment.FourthFragment;
-import com.example.donghyunlee.project_1w.Myfragment.SecondFragment;
-import com.example.donghyunlee.project_1w.Myfragment.ThirdFragment;
+import com.example.donghyunlee.project_1w.myfragment.FirstFragment;
+import com.example.donghyunlee.project_1w.myfragment.FourthFragment;
+import com.example.donghyunlee.project_1w.myfragment.SecondFragment;
+import com.example.donghyunlee.project_1w.myfragment.ThirdFragment;
 
 /**
  * Created by DONGHYUNLEE
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         btn_second.setOnClickListener(movePageListener);
         btn_third.setOnClickListener(movePageListener);
         btn_fourth.setOnClickListener(movePageListener);
+
     }
     View.OnClickListener movePageListener = new View.OnClickListener() {
         @Override

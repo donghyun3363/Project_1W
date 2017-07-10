@@ -24,6 +24,5 @@
         <include
             android:id="@+id/bottom_bar"
             layout="@layout/facebook_menu" />
-
     </LinearLayout>
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.donghyunlee.project_1w.Myfragment;
+package com.example.donghyunlee.project_1w.myfragment;
 
 
 import android.os.Bundle;
@@ -38,10 +38,15 @@ public class FirstFragment extends Fragment{
         // item 셋팅
         List<Item> items = new ArrayList<>();
         Item[] item = new Item[ITEM_SIZE];
-        item[0] = new Item(R.drawable.img_title, R.drawable.img_content, "1시간", "1,792개", "댓글 67개", "공유 11회", getContext().getString(R.string.title00), getContext().getString(R.string.content00));
-        item[1] = new Item(R.drawable.img_title, R.drawable.img_content3, "13분", "2,132개", "댓글 926개", "공유 43회", getContext().getString(R.string.title01), getContext().getString(R.string.content01));
-        item[2] = new Item(R.drawable.img_title2, R.drawable.img_content2, "어제 오후 1:00", "62개", "댓글 32개", "공유 4회", getContext().getString(R.string.title02), getContext().getString(R.string.content02));
-        item[3] = new Item(R.drawable.img_title3, R.drawable.img_content4, "어제 오후 9:40", "72개", "댓글 23개", "공유 13회", getContext().getString(R.string.title03), getContext().getString(R.string.content03));
+        item[0] = new Item(R.drawable.img_title, R.drawable.img_content, "1시간", "1,792개", "댓글 67개", "공유 11회",
+                getContext().getString(R.string.title00), getContext().getString(R.string.content00));
+        item[1] = new Item(R.drawable.img_title, R.drawable.img_content3, "13분", "2,132개", "댓글 926개", "공유 43회",
+                getContext().getString(R.string.title01), getContext().getString(R.string.content01));
+        item[2] = new Item(R.drawable.img_title2, R.drawable.img_content2, "어제 오후 1:00", "62개", "" +
+                "댓글 32개", "공유 4회",
+                getContext().getString(R.string.title02), getContext().getString(R.string.content02));
+        item[3] = new Item(R.drawable.img_title3, R.drawable.img_content4, "어제 오후 9:40", "72개", "댓글 23개", "공유 13회",
+                getContext().getString(R.string.title03), getContext().getString(R.string.content03));
 
 
         // ArayList에 추가

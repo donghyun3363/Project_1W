@@ -14,7 +14,7 @@
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:layout_collapseMode="pin">
+                app:layout_collapseMode="parallax"> // pin: 해당 뷰 고정, parallax: 해당 뷰 숨김
 
                 <LinearLayout
                         android:layout_width="match_parent"
@@ -28,8 +28,8 @@
                             android:id="@+id/imgbar0"
                             android:onClick="Cl_camera"
                             android:src="@drawable/ic_camera"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
+                            android:layout_width="@dimen/ic_size"
+                            android:layout_height="@dimen/ic_size"
                             android:scaleType="fitXY"
                             android:background="@android:color/transparent"
                             android:layout_marginRight="15dp"
@@ -51,7 +51,7 @@
                             <EditText
                                 android:id="@+id/txtbar0"
                                 android:layout_width="210dp"
-                                android:layout_height="30dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:background="@null"
                                 android:textColorHint="@color/colorPrimaryDark"
@@ -60,6 +60,8 @@
                                 android:hint="검색"
                                 android:textSize="@dimen/basic_str_size"
                                 android:textStyle="bold"
+                                android:imeOptions="actionSearch"
+                                android:inputType="text"
                                 />
                         </LinearLayout>
                         <ImageButton
